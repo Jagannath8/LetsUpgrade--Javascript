@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Management System</title>
+
+    <style>
+
+        * 
+        {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .data 
+        {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 500px;
+            width: 80%;
+            background-color:palevioletred;
+            margin-left: 10%;
+            margin-top: 100px;
+            padding: 20px;
+            display: inline-block;
+        }
+        .table
+        {
+            width: 100%;
+            margin-top: 20px;
+            background-color: wheat;
+        }
+
+        th,td
+        {
+            height: 40px;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .form
+        {
+            margin-top: 20px;
+        }
+
+        input
+        {
+            height: 40px;
+            text-indent: 20px;
+        }
+
+        button
+        {
+            padding: 15px;
+            color:red;
+        }
+
+        .modal
+        {
+            width: 90%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            display: none;
+        }
+
+        .modalchild
+        {
+            height: 300px;
+            width: 70%;
+            background-color:rgb(138, 129, 118);
+            margin-left: 15%;
+            margin-top: 100px;
+            display: inline-block;
+            padding: 30px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="modal" onclick="hideModal(event)">
+        <div class="modalchild">
+            <div class="form">
+                <form onsubmit="updateBus(event)">
+                    <input type="text" required placeholder="Name" id="upname"/>
+                    <input type="text" required placeholder="Source" id="upsource"/>
+                    <input type="text" required placeholder="Destinstion" id="updestination"/>
+                    <input type="number" required placeholder="Bus number" id="upnumber"/>
+                    <input type="number" required placeholder="Passenger capacity" id="upcapacity"/>
+                <button type="submit">Update Bus</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="data">
+        
+        <h1 align="center">Bus Management System</h1>
+
+        <div class="form" align="center">
+            <form onsubmit="addBus(event)">
+            <input type="text" required placeholder="Name" id="name"/>
+            <input type="text" required placeholder="Source" id="source"/>
+            <input type="text" required placeholder="Destinstion" id="destination"/>
+            <input type="number" required placeholder="Bus number" id="number"/>
+            <input type="number" required placeholder="Passenger capacity" id="capacity"/>
+            <button type="submit">Add Bus</button>
+            </form>
+        </div>
+
+        <div class="form" align="center">
+        <input type="text" 
+        placeholder="Search Source" 
+        id="searchSource"
+        onkeyup="searchBySource()"/>
+
+        <input type="text" 
+        placeholder="Search Destinstion" 
+        id="searchDestination"
+        onkeyup="searchByDestination()"/>
+        </div>
+
+        <table border="4" class="table" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Sr no</th>
+                    <th>Name</th>
+                    <th>Source</th>
+                    <th>Destinstion</th>
+                    <th>Bus number</th>
+                    <th>Passenger capacity</th>
+                    <th>Operation</th>
+                </tr>
+            </thead>
+
+            <tbody class="tdata" id="tdata">
+             
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <script src="day-6_assignment_ques-2.js"></script>
+    <!-- <script src="example.js"></script> -->
+</body>
+</html>
